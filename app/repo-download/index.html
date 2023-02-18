@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Download de Pacotes | MbCL Apps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Download do Pacote</h2>
+  <form action="https://get.mbcl.ml/main.zip" method="get">
+    <div class="form-group">
+      <label for="versao">Versão:</label>
+      <input type="text" class="form-control" id="versao" name="versao">
+    </div>
+    <div class="form-group">
+      <label for="nome-pacote">Nome do Pacote:</label>
+      <input type="text" class="form-control" id="nome-pacote" name="nome-pacote">
+    </div>
+    <button type="submit" class="btn btn-primary">Download</button>
+  </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  $(function() {
+    $('form').submit(function() {
+      var versao = $('#versao').val();
+      var nomePacote = $('#nome-pacote').val();
+      var url = 'https://repo.mbcl.ml/' + versao + '/' + nomePacote + '/main.zip';
+      $(this).attr('action', url);
+    });
+  });
+</script>
+
+</body>
+</html>
